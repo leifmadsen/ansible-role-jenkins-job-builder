@@ -33,9 +33,10 @@
 
 - name: Copy jenkins job configuration.
   become: yes
-  copy:
+  file:
     dest: "{{ jenkins_job_builder_file_jobs_dest }}"
     group: "{{ jenkins_job_builder_file_jobs_group }}"
     mode: "{{ jenkins_job_builder_file_jobs_mode }}"
     owner: "{{ jenkins_job_builder_file_jobs_owner }}"
     src: "{{ jenkins_job_builder_file_jobs_src }}"
+    state: directory
